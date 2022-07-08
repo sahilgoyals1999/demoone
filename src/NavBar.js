@@ -1,10 +1,14 @@
-import { useState } from "react";
+import { useContext, useState } from "react";
+import ThemeContext from "./context/themeContext";
 import NavLink from "./NavLink";
+import ThemeButton from "./Theme";
 
 const NavBar = (props) => {
+  const {appTheme, setAppTheme} = useContext(ThemeContext);
   const [searchCity, setSearchCity] = useState("");
+  let classBackground = appTheme == "Dark" ? "navbar navbar-expand-lg navbar-dark bg-dark" : "navbar navbar-expand-lg navbar-dark bg-primary";
     return (
-        <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+        <nav class={classBackground}>
           <div class="container-fluid">
             <a class="navbar-brand" href="#">{props.company}</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
@@ -47,6 +51,7 @@ const NavBar = (props) => {
               </form>
             </div>
           </div>
+          <ThemeButton />
         </nav>
     )
 }

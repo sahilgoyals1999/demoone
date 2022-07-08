@@ -19,11 +19,11 @@ const Form = () => {
     }, []);
 
     return (
-        <select name="flags" id="flags">
-            <option value="">select</option>
+        <select className="form-control">
+            <option value="">select country</option>
             {
-                countryList.map(x => {
-                    <option value={x.name.official}>{x.name.official}</option>
+                countryList.map((x, i) => {
+                    return <option key={i} value={x.alpha2Code}>{x.name.official}</option>
                 })
             }
         </select>
