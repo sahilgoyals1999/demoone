@@ -31,14 +31,14 @@ const App = () => {
     setDisplay(newDisplay);
   }
 
-  const addHome = (e) => {
-    if(cnt === content.length) return;
-    setCnt(cnt + 1);
-  }
-  const removeHome = (e) => {
-    if(cnt === 0) return;
-    setCnt(cnt - 1);
-  }
+  // const addHome = (e) => {
+  //   if(cnt === content.length) return;
+  //   setCnt(cnt + 1);
+  // }
+  // const removeHome = (e) => {
+  //   if(cnt === 0) return;
+  //   setCnt(cnt - 1);
+  // }
 
   const [appTheme, setAppTheme] = useState('Light');
   const value = {appTheme, setAppTheme};
@@ -49,11 +49,16 @@ const App = () => {
     <div className="container">
       <ThemeContext.Provider value={value}>
         <CardContext.Provider value={count}>
-          <Layout />
-          <Form />
-          <Register />
-          <div class="col-10">
-            <div className="d-flex flex-wrap align-items-center">
+          <Layout>
+            <NavBar 
+              company={"Housing.com"} 
+              filterFunction={filterFunction}
+              />
+            <hr />
+            <Form />
+            <Register />
+            <div class="col-10">
+              <div className="d-flex flex-wrap align-items-center">
                   {display.map((item, ind) => { 
                     return <HouseInfo 
                     key={ind}
@@ -65,6 +70,7 @@ const App = () => {
                   })}
                 </div>
             </div>
+            </Layout>
         </CardContext.Provider>
         </ThemeContext.Provider>
     </div>

@@ -5,7 +5,7 @@ import content from "./data/content";
 const HouseInfo = (props) => {
     const {cardItems, setCardItems} = useContext(CardContext);
     return (
-        <div className="col-md-4">
+        <div className="col-md-4" style={{padding: "10px"}}>
             <div className="card mb-3">
             <img className="card-img w-100 h-100"  src={props.imageUrl} alt="..." />
                 <h3 className="card-header">{props.size}</h3>
