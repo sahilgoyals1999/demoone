@@ -10,6 +10,7 @@ import Form from "./Form";
 import ThemeContext from "./context/themeContext";
 import Layout from "./Layout";
 import CardContext from "./context/cartContext";
+import Register from "./Register"
 
 const App = () => {
   const [cnt, setCnt] = useState(0);
@@ -50,6 +51,7 @@ const App = () => {
         <CardContext.Provider value={count}>
           <Layout />
           <Form />
+          <Register />
           <div class="col-10">
             <div className="d-flex flex-wrap align-items-center">
                   {display.map((item, ind) => { 
