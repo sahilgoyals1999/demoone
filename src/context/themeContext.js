@@ -2,9 +2,7 @@ import React from "react";
 
 const ThemeContext = React.createContext({
     appTheme: 'Light',
-    setAppTheme: () => {
-       
-    }
+    setAppTheme: () => {}
 });
 
 export default ThemeContext;

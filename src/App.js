@@ -9,6 +9,7 @@ import { useState } from "react";
 import Form from "./Form";
 import ThemeContext from "./context/themeContext";
 import Layout from "./Layout";
+import CardContext from "./context/cartContext";
 
 const App = () => {
   const [cnt, setCnt] = useState(0);
@@ -40,31 +41,28 @@ const App = () => {
 
   const [appTheme, setAppTheme] = useState('Light');
   const value = {appTheme, setAppTheme};
+  const [cardItems, setCardItems] = useState(0);
+  const count = {cardItems, setCardItems};
 
   return (
     <div className="container">
       <ThemeContext.Provider value={value}>
-        <Layout />
-      {/* <NavBar
-      company={"Housing.com"}
-      filterFunction={filterFunction}
-      cnt={cnt}
-      />
-      <div class="col-10">
-        <div className="d-flex flex-wrap align-items-center">
-              {display.map((item, ind) => { 
-                return <HouseInfo 
-                key={ind}
-                imageUrl={item.imageUrl}
-                size={item.size}
-                price={item.price}
-                loc={item.loc}
-                addHome={addHome}
-                removeHome={removeHome}
-                />
-              })}
+        <CardContext.Provider value={count}>
+          <Layout />
+          <div class="col-10">
+            <div className="d-flex flex-wrap align-items-center">
+                  {display.map((item, ind) => { 
+                    return <HouseInfo 
+                    key={ind}
+                    imageUrl={item.imageUrl}
+                    size={item.size}
+                    price={item.price}
+                    loc={item.loc}
+                    />
+                  })}
+                </div>
             </div>
-        </div> */}
+        </CardContext.Provider>
         </ThemeContext.Provider>
     </div>
   )

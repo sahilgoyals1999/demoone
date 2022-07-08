@@ -1,9 +1,11 @@
 import { useContext, useState } from "react";
+import CardContext from "./context/cartContext";
 import ThemeContext from "./context/themeContext";
 import NavLink from "./NavLink";
 import ThemeButton from "./Theme";
 
 const NavBar = (props) => {
+  const {cardItems, setCardItems} = useContext(CardContext);
   const {appTheme, setAppTheme} = useContext(ThemeContext);
   const [searchCity, setSearchCity] = useState("");
   let classBackground = appTheme == "Dark" ? "navbar navbar-expand-lg navbar-dark bg-dark" : "navbar navbar-expand-lg navbar-dark bg-primary";
@@ -47,7 +49,11 @@ const NavBar = (props) => {
                 placeholder="Search" 
                 />
                 <button class="btn btn-secondary my-2 my-sm-0" type="submit">Search</button>
-                <span class="badge bg-secondary">Count: {props.cnt}</span>
+                <span 
+                class="badge bg-secondary"
+                >
+                  Count: {cardItems}
+                </span>
               </form>
             </div>
           </div>

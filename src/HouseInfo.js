@@ -1,4 +1,9 @@
+import { useContext } from "react";
+import CardContext from "./context/cartContext";
+import content from "./data/content";
+
 const HouseInfo = (props) => {
+    const {cardItems, setCardItems} = useContext(CardContext);
     return (
         <div className="col-md-4">
             <div className="card mb-3">
@@ -10,8 +15,19 @@ const HouseInfo = (props) => {
                     <p className="card-text">{props.loc}</p>
                     <p className="card-text">{props.price}</p>
                 </div>
-                <button onClick={e => props.addHome()}>Add</button>
-                <button onClick={e => props.removeHome()}>Remove</button>
+                <button 
+                onClick={e => {
+                    if(cardItems + 1 > content.length) return;
+                    setCardItems(cardItems + 1)
+                }}
+                >Add</button>
+                <button 
+                onClick={e => {
+                    if(cardItems - 1 < 0) return;
+                    setCardItems(cardItems - 1)
+                }}
+                >
+                Remove</button>
             </div>
         </div>
     )
