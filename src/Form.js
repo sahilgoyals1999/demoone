@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
+import useGetApi from "./context/useGetApi";
 
 const Form = () => {
     const [firstName, setFirstName] = useState('');
@@ -7,16 +8,16 @@ const Form = () => {
     const [salary, setSalary] = useState(0);
     const [country, setCountry] = useState("");
     const [age, setAge] = useState(0);
-    const [countryList, setCountryList] = useState([]);
+    const countryList = useGetApi("https://restcountries.com/v3.1/all");
 
-    useEffect(() => {
-        axios.get("https://restcountries.com/v3.1/all").then(res => {
-            console.log(res);
-            setCountryList(res.data);
-        }).catch(err => {
-            console.log(err);
-        })
-    }, []);
+    // useEffect(() => {
+    //     axios.get("https://restcountries.com/v3.1/all").then(res => {
+    //         console.log(res);
+    //         setCountryList(res.data);
+    //     }).catch(err => {
+    //         console.log(err);
+    //     })
+    // }, []);
 
     return (
         <select className="form-control">

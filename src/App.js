@@ -49,6 +49,7 @@ const App = () => {
       <ThemeContext.Provider value={value}>
         <CardContext.Provider value={count}>
           <Layout />
+          <Form />
           <div class="col-10">
             <div className="d-flex flex-wrap align-items-center">
                   {display.map((item, ind) => { 

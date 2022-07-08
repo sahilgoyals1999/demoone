@@ -9,7 +9,7 @@ const ThemeButton = () => {
         <button 
         className="btn btn-primary"
         onClick={e => {
-            let themeName = appTheme == 'Light' ? 'Dark' : 'Light';
+            let themeName = appTheme === 'Light' ? 'Dark' : 'Light';
             setAppTheme(themeName);
             setThemeType(themeName);
         }}
