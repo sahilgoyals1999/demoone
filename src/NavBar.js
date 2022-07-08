@@ -27,16 +27,6 @@ const NavBar = (props) => {
                 <NavLink name={"Features"}/>
                 <NavLink name={"Pricing"}/>
                 <NavLink name={"About"}/>
-                <li class="nav-item dropdown">
-                  <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Dropdown</a>
-                  <div class="dropdown-menu">
-                    <a class="dropdown-item" href="#">Action</a>
-                    <a class="dropdown-item" href="#">Another action</a>
-                    <a class="dropdown-item" href="#">Something else here</a>
-                    <div class="dropdown-divider"></div>
-                    <a class="dropdown-item" href="#">Separated link</a>
-                  </div>
-                </li>
               </ul>
               <form class="d-flex">
                 <input class="form-control me-sm-2" 
@@ -48,11 +38,10 @@ const NavBar = (props) => {
                 type="text" 
                 placeholder="Search" 
                 />
-                <button class="btn btn-secondary my-2 my-sm-0" type="submit">Search</button>
                 <span 
                 class="badge bg-secondary"
                 >
-                  Count: {cardItems}
+                  <p>Count: {cardItems}</p>
                 </span>
               </form>
             </div>
