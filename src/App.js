@@ -1,16 +1,10 @@
 import HouseInfo from "./HouseInfo";
 import NavBar from "./NavBar";
 import content from "./data/content";
-import Search from "./Seach";
-import Checkbox from "./Checkbox";
-import RadioButton from "./RadioButton";
-import Dropdown from "./Dropdown";
 import { useState } from "react";
-import Form from "./Form";
 import ThemeContext from "./context/themeContext";
 import Layout from "./Layout";
 import CardContext from "./context/cartContext";
-import Register from "./Register"
 import Cards from "./Cards";
 
 const App = () => {

@@ -15,19 +15,25 @@ const HouseInfo = (props) => {
                     <p className="card-text">{props.loc}</p>
                     <p className="card-text">{props.price}</p>
                 </div>
+                <div className="container">
                 <button 
+                className="btn btn-primary"
                 onClick={e => {
                     if(cardItems + 1 > content.length) return;
                     setCardItems(cardItems + 1)
                 }}
-                >Add</button>
+                >Add
+                </button>
                 <button 
+                className="btn btn-danger"
                 onClick={e => {
                     if(cardItems - 1 < 0) return;
                     setCardItems(cardItems - 1)
                 }}
                 >
-                Remove</button>
+                Remove
+                </button>
+                </div>
             </div>
         </div>
     )

@@ -20,13 +20,8 @@ const NavBar = (props) => {
 
             <div class="collapse navbar-collapse" id="navbarColor01">
               <ul class="navbar-nav me-auto">
-                <li class="nav-item">
-                  <a class="nav-link active" href="#">Home
-                    <span class="visually-hidden">(current)</span>
-                  </a>
-                </li>
                 <Link to="/login">
-                  <NavLink name={"login"}/>
+                  <NavLink name={"Login"}/>
                 </Link>
                 <Link to="/register">
                   <NavLink name={"Register"}/>
