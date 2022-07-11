@@ -3,6 +3,7 @@ import CardContext from "./context/cartContext";
 import ThemeContext from "./context/themeContext";
 import NavLink from "./NavLink";
 import ThemeButton from "./Theme";
+import { Link } from "react-router-dom";
 
 const NavBar = (props) => {
   const {cardItems, setCardItems} = useContext(CardContext);
@@ -24,9 +25,12 @@ const NavBar = (props) => {
                     <span class="visually-hidden">(current)</span>
                   </a>
                 </li>
-                <NavLink name={"Features"}/>
-                <NavLink name={"Pricing"}/>
-                <NavLink name={"About"}/>
+                <Link to="/login">
+                  <NavLink name={"login"}/>
+                </Link>
+                <Link to="/register">
+                  <NavLink name={"Register"}/>
+                </Link>
               </ul>
               <form class="d-flex">
                 <input class="form-control me-sm-2" 
