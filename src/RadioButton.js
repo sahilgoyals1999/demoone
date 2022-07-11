@@ -22,8 +22,7 @@ const RadioButton = () => {
                             {x.occupancy}
                         </label>
                     </div>
-                )
-                })
+                )})
             }
             <p>{JSON.stringify(selectedItem)}</p>
         </div>

@@ -1,6 +1,6 @@
 const Greetings = () => {
     return (
-        <h1>React!!!!</h1>
+        <h1>Welcome to React!!!!</h1>
     )
 }
 

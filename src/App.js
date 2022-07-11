@@ -1,4 +1,3 @@
-import HouseInfo from "./HouseInfo";
 import NavBar from "./NavBar";
 import content from "./data/content";
 import { useState } from "react";
@@ -8,7 +7,7 @@ import CardContext from "./context/cartContext";
 import Cards from "./Cards";
 
 const App = () => {
-  const [cnt, setCnt] = useState(0);
+  // const [cnt, setCnt] = useState(0);
   const [display, setDisplay] = useState(content);
 
   const filterFunction = (searchCity) => {

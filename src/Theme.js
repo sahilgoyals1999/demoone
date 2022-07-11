@@ -14,7 +14,7 @@ const ThemeButton = () => {
             setThemeType(themeName);
         }}
         >
-            {themeType}
+        {themeType}
         </button>
     )
 }
